@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:replace="fragments/fragment :: headerFragment('Add Pegawai')"></title>
+    <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+    <object th:include="fragments/fragment :: js" th:remove="tag"></object>
+</head>
+<body>
+<nav th:replace="fragments/fragment :: navbar"></nav>
+<br><br>
+<div class="row justify-content-center">
+	<div class="col-md-4">
+	<h2>Tambah Pegawai</h2>
+    <form th:action="@{/pegawai/tambah}" th:object=${pegawai} method="POST">
+        <div class="form-group">
+            <label for="input-nama">Nama</label>
+            <input id="input-nama" type="text" name="nama" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="input-tempatLahir">Tempat Lahir</label>
+            <input type="text" name="tempatLahir" class="form-control" id="input-tempatLahir"/>
+        </div>
+        <div class="form-group">
+            <label for="input-tanggalLahir">Tanggal Lahir</label>
+            <input type="date" name="tanggalLahir" class="form-control" id="input-tanggalLahir"/>
+        </div>
+        <div class="form-group">
+            <label for="input-tahunMasuk">Tahun Masuk</label>
+            <input type="number" name="tahunMasuk" class="form-control" id="input-tahunMasuk"/>
+        </div>
+       <!--  <div class="form-group">
+            <label for="input-provinsi">Provinsi</label>
+
+        </div> -->
+        <div class="form-group">
+            <label for="input-instansi">Nama Instansi</label>
+            <select name="instansi" class="form-control">
+	                <option th:each="instansi : ${allInstansi}"
+	                        th:value="${instansi.id}"
+	                        th:text="${instansi.nama}">
+	                </option>
+	        </select>
+        </div>
+        <div class="form-group">
+            <label for="input-jabatan">Jabatan</label>
+              <select name="idJabatan" class="form-control">
+	                <option th:each="jabatan : ${allJabatan}"
+	                        th:value="${jabatan.id}"
+	                        th:text="${jabatan.nama}">
+	                </option>
+	          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Simpan</button>
+    </form>
+    </div>
+</div>
+</body>
+</html>

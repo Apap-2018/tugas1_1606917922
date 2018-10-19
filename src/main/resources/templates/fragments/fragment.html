@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:method="http://www.w3.org/1999/xhtml">
+
+<head>
+	<head th:fragment="title">
+		<title th:fragment="headerFragment(title)" th:text="${title}">Home</title>
+	</head>
+	
+	<head th:fragment="css">
+		<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+		
+		
+	</head>
+	
+	<head th:fragment="js">
+		<script th:src="@{/js/bootstrap.min.js}"></script>
+	</head>
+</head>
+
+<body>
+	<nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" th:href="@{/}">SIPEG</a>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/jabatan/tambah}" method="GET">Tambah Jabatan</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/pegawai/tambah}" method="GET">Tambah Pegawai</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/pegawai/cari}" method="GET">Cari Pegawai</a>
+                </li>
+				<li class="nav-item active">
+					<a class="nav-link" th:href="@{/jabatan/viewall}" method="GET">Lihat Semua Jabatan</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</body>
+</html>
