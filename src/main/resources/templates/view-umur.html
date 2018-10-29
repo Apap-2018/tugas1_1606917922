@@ -41,16 +41,17 @@
 						<td th:text="'Nama Instansi'"></td>
 						<td th:text="${termuda.instansi.nama}"></td>
 					</tr>
-<!-- 					<tr> -->
-<!-- 					 	<td th:text="'Jabatan'"></td> -->
-<!-- 			        	<td> -->
-<!-- 			            <ul> -->
-<!-- 			               <li th:each="jabatanTermuda : ${jabatanTemuda}"> -->
-<!-- 			                    <span th:text="${jabatanTermuda.jabatan.nama}"></span> -->
-<!-- 			                </li> -->
-<!-- 			            </ul> -->
-<!-- 			        	</td> -->
-<!-- 			        </tr> -->
+					
+					<tr>
+					 	<td th:text="'Jabatan'"></td>
+			        	<td>
+			            <ul>
+			               <li th:each="jabatanTermuda : ${termuda.jabatanList}">
+			                    <span th:text="${jabatanTermuda.nama}"></span>
+			                </li>
+			            </ul>
+			        	</td>
+			        </tr>
 				</tbody>
 			
 			</table>
@@ -84,7 +85,16 @@
 						<td th:text="'Nama Instansi'"></td>
 						<td th:text="${tertua.instansi.nama}"></td>
 					</tr>
-					
+					<tr>
+					 	<td th:text="'Jabatan'"></td>
+			        	<td>
+			            <ul>
+			               <li th:each="jabatanTertua : ${tertua.jabatanList}">
+			                    <span th:text="${jabatanTertua.nama}"></span>
+			                </li>
+			            </ul>
+			        	</td>
+			        </tr>
 				</tbody>
 			
 			</table>

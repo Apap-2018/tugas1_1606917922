@@ -29,6 +29,15 @@
 				 <td><input type="number" name="tahunMasuk" th:value="${pegawai.tahunMasuk}" class="form-control"/></td>
 			</tr><br>
 			<tr>
+				<td>Provinsi</td>
+				 <select name="provinsi" class="form-control">
+	                <option th:each="provinsi : ${allProvinsi}"
+	                        th:value="${provinsi.id}"
+	                        th:text="${provinsi.nama}">
+	                </option>
+	        </select>
+			</tr><br>
+			<tr>
 				<td>Nama Instansi</td>
 				<select name="instansi" class="form-control">
 	                <option th:each="instansi : ${allInstansi}"
@@ -42,8 +51,8 @@
 				<td>Calon Jabatan</td>
 				<select name="idJabatan" class="form-control">
 	                <option th:each="jabatan : ${allJabatan}"
+	                		selected="selected"
 	                        th:value="${jabatan.id}"
-	                        selected="selected"
 	                        th:text="${jabatan.nama}">
 	                </option>
 	          </select>

@@ -28,10 +28,15 @@
             <label for="input-tahunMasuk">Tahun Masuk</label>
             <input type="number" name="tahunMasuk" class="form-control" id="input-tahunMasuk"/>
         </div>
-       <!--  <div class="form-group">
+       <div class="form-group">
             <label for="input-provinsi">Provinsi</label>
-
-        </div> -->
+			<select name="provinsi" class="form-control">
+	                <option th:each="provinsi : ${allProvinsi}"
+	                        th:value="${provinsi.id}"
+	                        th:text="${provinsi.nama}">
+	                </option>
+	        </select>
+        </div> 
         <div class="form-group">
             <label for="input-instansi">Nama Instansi</label>
             <select name="instansi" class="form-control">

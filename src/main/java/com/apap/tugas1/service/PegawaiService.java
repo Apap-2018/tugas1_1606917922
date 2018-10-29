@@ -13,4 +13,5 @@ public interface PegawaiService {
 	void updatePegawai(String nip, PegawaiModel pegawai);
 	List<PegawaiModel> getAllPegawai();
 	double getGajiLengkapByNip(String nip);
+	String getNip(PegawaiModel pegawai);
 }

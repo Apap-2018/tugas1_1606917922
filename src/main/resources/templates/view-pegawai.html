@@ -47,8 +47,8 @@
 			        <td>Jabatan</td>
 			        <td>
 			            <ul>
-			               <li th:each="jabatanPegawai : ${jabatanPegawai}">
-			                    <span th:text="${jabatanPegawai.jabatan.nama}"></span>
+			               <li th:each="jabatan : ${pegawai.jabatanList}">
+			                    <span th:text="${jabatan.nama}"></span>
 			                </li>
 			            </ul>
 			        </td>
